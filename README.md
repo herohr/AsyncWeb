@@ -66,7 +66,7 @@ Just like Flask
 
 Request has `method`, `url`(the fully URL), `version`,`header`(the dict of header).
 
-The Request object is the packaged aiohttp.web.Request object.So if something you want but Request doesn't have, you can use `Request._request`
+The Request object is the subclass aiohttp.web.Request object.
 
 
 
