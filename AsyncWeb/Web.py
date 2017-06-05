@@ -1,8 +1,6 @@
 from aiohttp import web, web_ws
-from AsyncWeb.HTTPBases import BaseResponse, BaseRequest
 import asyncio
 import logging
-from jinja2 import Template
 
 
 class Router:
