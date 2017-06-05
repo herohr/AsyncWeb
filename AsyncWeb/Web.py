@@ -82,7 +82,7 @@ class Framework:
                             encode('utf-8'), content_type='text/html')
 
 
-class Request(web.Request):
+class Request(web.BaseRequest):
     sentinel = object()
 
     def __init__(self, *args, **kwargs):
@@ -107,14 +107,13 @@ class Request(web.Request):
     @staticmethod
     def turn(request):
         return Request(
-        request._message,
-        request._payload,
-        request._transport,
-        request._reader,
-        request._writer,
-        request._time_service,
-        request._task,
-        secure_proxy_ssl_header=request._secure_proxy_ssl_header)
+            request._message,
+            request._payload,
+            request._protocol,
+            request._writer,
+            request._time_service,
+            request._task,
+            secure_proxy_ssl_header=request._secure_proxy_ssl_header)
 
 
 class Response(web.Response):
